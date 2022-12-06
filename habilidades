@@ -1,0 +1,114 @@
+class Pessoa:
+    def __init__(self, nome, idade, peso, profissao, comendo=False, falando=False, andando=False):
+      self.nome = nome
+      self.idade = idade
+      self.peso = peso
+      self.profissao = profissao
+      self.comendo = comendo
+      self.falando = falando
+      self.andando = andando
+
+    # METODO ANDAR
+    def Andar(self, distancia):
+      if self.andando:
+        print(f'{self.nome} já está andando...')
+        return
+
+      print(f'{self.nome} andará por {distancia} metros...')
+      self.andando = True
+
+    # METODO PARAR DE ANDAR
+    def PararAndar(self):
+      if not self.andando:
+        print(f'{self.nome} esta parado...')
+        return
+      
+      print(f'{self.nome} parou de andar...')
+      self.andando = False
+
+    # METODO FALAR
+    def Falar(self):
+      if self.falando == False:
+        print(f'{self.nome} esta falando...')
+        self.falando = True
+        return
+    
+      print(f'{self.nome} já esta falando...')
+
+    # METODO PARAR DE FALAR
+    def PararFalar(self):
+      if self.falando:
+        print(f'{self.nome} parou de falar...')
+        self.falando = False
+        return
+      
+    # METODO COMER
+    def Comer(self, alimento):
+      if self.comendo:
+        print(f'{self.nome} já está comendo ...')
+        return
+      
+      print(f'{self.nome} está comendo {alimento}...')
+      self.comendo = True
+
+    # METODO PARAR DE COMER
+    def PararComer(self):
+      if self.comendo:
+        print(f'{self.nome} parou de comer...')
+        self.comendo = False
+        return
+
+    # METODO SALARIO
+    def Salario(self):
+      if self.profissao == 'programador':
+        salario = 10000.00
+        print(f'{self.nome} trabalha fazendo programa... ele é um PROGRAMADOR e recebe R${salario}...')
+      if self.profissao == 'medico':
+        salario = 25000.00
+        print(f'{self.nome} é um médico e recebe R${salario}...')
+      if self.profissao == 'engenheiro':
+        salario = 20000.00
+        print(f'{self.nome} é um engenheiro e recebe R${salario}...')
+      if self.profissao == 'advogado':
+        salario = 30000.00
+        print(f'{self.nome} é um advogado e recebe R${salario}...')
+      
+
+    
+    # METODO DADOS PESSOA
+    def Dados(self):
+      print(f'-----Pessoa 1-----')
+      if self.nome:
+        print(f'Nome:  {self.nome}')
+      if self.idade:
+        print(f'Idade:  {self.idade} Anos')
+      if self.peso:
+        print(f'Peso:  {self.peso} KG')
+      if self.profissao:
+        print(f'Profissão:  {self.profissao}')
+      print(f'------------------')
+
+
+# NOME, IDADE, PESO, PROFISSAO, COMENDO, FALANDO, ANDANDO
+if __name__ == '__main__':
+  p1 = Pessoa('Carlos', 27, 67.0, 'medico')
+
+  p1.Dados()
+#  p1.Andar(2)
+#  p1.Andar(3)
+#  p1.PararAndar()
+#  p1.PararAndar()
+#  p1.Falar()
+#  p1.Falar()
+#  p1.PararFalar()
+#  p1.Falar()
+# p1.Comer('Lasanha')
+  p1.Comer('Maçã')
+  p1.PararComer()
+  p1.Comer('Açai')
+#  p1.Salario()
+
+  p2 = Pessoa('Thiago', 19, 62.0, 'programador')
+
+  p2.Dados()
+  p2.Salario()
